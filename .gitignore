@@ -16,10 +16,7 @@ mlruns/*
 logs.log
 
 app.yaml
-Dockerfile
-app.py
-model.pkl
-requirements.txt
+
 demo/*
 templates/*
 static/*
