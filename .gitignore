@@ -18,5 +18,3 @@ logs.log
 app.yaml
 
 demo/*
-templates/*
-static/*
