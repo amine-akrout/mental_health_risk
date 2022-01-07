@@ -1,0 +1,25 @@
+# python env
+venv/
+
+# python idea
+.idea/
+
+# data
+data/*
+
+# pycache
+__pycache__/
+
+# mlflow articats 
+mlruns/*
+
+logs.log
+
+app.yaml
+Dockerfile
+app.py
+model.pkl
+requirements.txt
+demo/*
+templates/*
+static/*
