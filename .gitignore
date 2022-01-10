@@ -15,6 +15,4 @@ mlruns/*
 
 logs.log
 
-app.yaml
-
 demo/*
