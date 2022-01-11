@@ -1,1 +1,2 @@
 # Deploying Machine Learning as Web App  
+[![Deploy to App Engine](https://github.com/amine-akrout/mental_health_risk/actions/workflows/app_engine.yml/badge.svg)](https://github.com/amine-akrout/mental_health_risk/actions/workflows/app_engine.yml)
