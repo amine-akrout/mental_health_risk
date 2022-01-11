@@ -12,8 +12,8 @@ COPY . ./
 RUN pip install -r requirements.txt
 RUN pip install gunicorn
 
-EXPOSE 5000
+EXPOSE 8080
 
 # Run the web service on container startup using gunicorn
 
-CMD exec gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 8 --timeout 0 app:app
+CMD exec gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 8 --timeout 0 app:app
