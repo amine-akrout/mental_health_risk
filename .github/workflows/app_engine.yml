@@ -1,9 +1,13 @@
+name: Deploy to App Engine
+
 on:
   push:
     branches:
       - main
 
-name: Deploy to App Engine
+workflow_dispatch:
+
+
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   REGION: europe-west3
