@@ -23,7 +23,7 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
         export_default_credentials: true  
 
-    - name: Deploy to App Engine
+    - name: Deploy
       id: deploy
       uses: google-github-actions/deploy-appengine@v0.2.0
       with:
