@@ -1,7 +1,7 @@
 # Deploying Machine Learning as Web App  
 [![Deploy to App Engine](https://github.com/amine-akrout/mental_health_risk/actions/workflows/app_engine.yml/badge.svg)](https://github.com/amine-akrout/mental_health_risk/actions/workflows/app_engine.yml)
 ## Data Information
-Data used in the project can be found on [UCI Machine Learning Repository]([kaggle](https://archive.ics.uci.edu/ml/datasets/Maternal+Health+Risk+Data+Set))
+Data used in the project can be found on [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Maternal+Health+Risk+Data+Set)
 
 *Data has been collected from different hospitals, community clinics, maternal health cares from the rural areas of Bangladesh through the IoT based risk monitoring system.*
 
