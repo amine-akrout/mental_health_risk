@@ -10,10 +10,10 @@ COPY . ./
 
 # Install production dependencies.
 RUN pip install -r requirements.txt
-RUN pip install gunicorn
 
 EXPOSE 8080
 
 # Run the web service on container startup using gunicorn
 
-CMD exec gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 8 --timeout 0 app:app
+ENTRYPOINT ["uvicorn"]
+CMD ["app:app", "--host", "0.0.0.0", "--port", "8080"]
