@@ -14,3 +14,5 @@ __pycache__/
 mlruns/*
 
 logs.log
+
+EDA.ipynb
