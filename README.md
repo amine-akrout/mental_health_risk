@@ -1,4 +1,4 @@
-# MLOps with MLflow, App Engine and Github Actions
+# MLOps with MLflow, FastApi, App Engine and Github Actions
 [![Deploy to App Engine](https://github.com/amine-akrout/mental_health_risk/actions/workflows/app_engine.yml/badge.svg)](https://github.com/amine-akrout/mental_health_risk/actions/workflows/app_engine.yml)
 ## Data Information
 Data used in the project can be found on [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Maternal+Health+Risk+Data+Set)
