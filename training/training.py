@@ -21,7 +21,8 @@ if not sys.warnoptions:
     os.environ["PYTHONWARNINGS"] = "ignore"
 
 # read the data
-mhr_data = pd.read_csv("./data/Maternal Health Risk Data Set.csv")
+DATA_PATH = "../data/Maternal Health Risk Data Set.csv"
+mhr_data = pd.read_csv(DATA_PATH)
 # convert the index to int
 mhr_data.index = mhr_data.index.astype("int64")
 
@@ -102,5 +103,7 @@ final_lightgbm = finalize_model(tuned_lightgbm)
 logger.info("Model finalized successfully")
 
 logger.info("Saving model")
-save_model(final_lightgbm, "model")
+# save the model (final_lightgbm) inside ./model directory
+save_model(final_lightgbm, "../model/lightgbm_model")
+
 logger.info("Model saved successfully")

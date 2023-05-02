@@ -11,7 +11,7 @@ data/*
 __pycache__/
 
 # mlflow articats 
-mlruns/*
+training/mlruns/*
 
 logs.log
 

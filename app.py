@@ -15,7 +15,6 @@ from pydantic import BaseModel
 warnings.filterwarnings("ignore")
 app = FastAPI()
 
-# app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates/")
 app.mount("/templates", StaticFiles(directory="templates",
           html=True), name="templates")
@@ -25,6 +24,7 @@ class InputData(BaseModel):
     """
     Class to define the input data
     """
+
     age: float
     sbp: float
     dbp: float
@@ -38,14 +38,14 @@ models = {}
 
 @app.on_event("startup")
 def start_load_model():
-    """ Function to load the model on startup """
+    """Function to load the model on startup"""
     logger.info("Loading the model...")
-    models['model'] = load_model('model')
+    models["model"] = load_model("lightgbm_model")
 
 
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-    """ Function to serve the home page """
+    """Function to serve the home page"""
     logger.info("Serving the home page...")
     return templates.TemplateResponse("index.html", {"request": request})
 
@@ -56,16 +56,25 @@ async def app_post(request: Request, input_data: InputData = Body(...)) -> dict:
     Function to make the prediction using the model trained in training.py
     """
     # Get the input data from the Pydantic model
-    data = [[input_data.age, input_data.sbp, input_data.dbp,
-             input_data.bs, input_data.bt, input_data.hr]]
-    cols = ['Age', 'SystolicBP', 'DiastolicBP', 'BS', 'BodyTemp', 'HeartRate']
+    data = [
+        [
+            input_data.age,
+            input_data.sbp,
+            input_data.dbp,
+            input_data.bs,
+            input_data.bt,
+            input_data.hr,
+        ]
+    ]
+    cols = ["Age", "SystolicBP", "DiastolicBP", "BS", "BodyTemp", "HeartRate"]
     data_unseen = pd.DataFrame(data, columns=cols)
     # Make the prediction using the PyCaret model
-    prediction = predict_model(models['model'], data=data_unseen, round=0)
+    prediction = predict_model(models["model"], data=data_unseen, round=0)
     preds = prediction.Label[0]
     logger.info(f"Prediction: {preds}")
     # Prepare the response message
-    message = 'Risk Level : {} !'.format(preds.split(' ', 1)[0].title())
+    message = "Risk Level : {} !".format(preds.split(" ", 1)[0].title())
 
-    return templates.TemplateResponse('index.html',
-                                      context={'request': request, 'message': message})
+    return templates.TemplateResponse(
+        "index.html", context={"request": request, "message": message}
+    )
