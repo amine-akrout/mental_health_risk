@@ -1,6 +1,6 @@
 fastapi==0.109.1
 pandas==1.3.5
 uvicorn==0.16.0
-python-multipart==0.0.5
+python-multipart==0.0.7
 pycaret==2.3.5
 loguru ==0.7.0
